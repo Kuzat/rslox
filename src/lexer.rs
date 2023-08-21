@@ -251,8 +251,8 @@ impl Scanner {
     }
 
     fn string(&mut self) -> Result<(), LoxError> {
-        while (self.peek() != '"' && !self.is_at_end()) {
-            if (self.peek() == '\n') {
+        while self.peek() != '"' && !self.is_at_end() {
+            if self.peek() == '\n' {
                 self.line += 1;
             }
             self.advance();
